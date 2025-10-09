@@ -6,7 +6,7 @@ CONFIG_PATH="kubeconfig.yaml"
 # requires k3d
 k3d cluster create $K3D_NAME --api-port=6444
 
-echo Building executable... 
+echo Building executable...
 go build ../
 
 echo -n "Ensuring k3d is running..."
@@ -20,7 +20,7 @@ while true; do
   eval $CONFIG 2>&1 | grep "k3d-$K3D_NAME" >/dev/null && echo done && break \
     || (echo -n . && sleep 1)
 done
-echo $(eval $CONFIG) > $CONFIG_PATH
+$CONFIG > $CONFIG_PATH
 echo Config is available at $CONFIG_PATH
 
 echo Running kubernetes-diff-logger...

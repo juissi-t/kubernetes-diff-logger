@@ -3,7 +3,7 @@ package wrapper
 import (
 	"fmt"
 
-	v1 "k8s.io/api/batch/v1beta1"
+	v1 "k8s.io/api/batch/v1"
 	v1meta "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
